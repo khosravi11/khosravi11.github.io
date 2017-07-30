@@ -1,0 +1,247 @@
+@media only screen and (max-width: 768px) {
+    body, footer {
+        width:748px !important;
+    }
+    #wrapper {
+        width:700px !important;
+
+      padding: 0px !important;
+    }
+    #leftcolumn,
+    #rightcolumn {
+      width:96%  !important;
+
+      padding: 0px !important;
+       
+    }
+    h1{ padding: 15px !important;
+    font-size: 22px !important;
+
+      margin: 0px !important;
+      text-align: center  !important;
+
+    }h2{
+      margin: 10px !important;
+      text-align: center  !important;
+      padding: 0px !important;
+
+    }
+     nav{
+      margin: 10px !important;
+      text-align: center  !important;
+      padding: 0px !important;
+
+    }
+
+}
+@media only screen and (max-width: 640px) {
+    body, footer {
+        width:600px !important;
+    }
+    #wrapper {
+        width:550px !important;
+
+      padding: 0px !important;
+    }
+    #leftcolumn,
+    #rightcolumn {
+      width:96%  !important;
+
+      padding: 0px !important;
+       
+    }
+    h1{ padding: 15px !important;
+    font-size: 22px !important;
+
+      margin: 0px !important;
+      text-align: center  !important;
+
+    }h2{
+      margin: 10px !important;
+      text-align: center  !important;
+      padding: 0px !important;
+
+    }
+     nav{
+      margin: 10px !important;
+      text-align: center  !important;
+      padding: 0px !important;
+
+    }
+    img, figcaption{
+      width: 96% !important;
+      top: 140px !important;
+    }
+
+}
+
+body {
+    font-size: 14px;
+    width: 960px;
+    margin: 0 auto;
+    color: #777777;
+    font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
+    line-height: 16px;
+    text-align: justify;
+}
+a {
+
+  text-decoration: none;
+}
+p {
+    padding: 5px;
+    margin-bottom: 10px;
+}
+div {
+    display: block;
+}
+h1 {
+    margin-left: 50px;
+    width: 150px;
+    padding: 15px;
+    font-size: 22px;
+    background: #4aaaa5;
+    color: white;
+    font-family: 'Georgia', Times, Times New Roman, serif;
+}
+h2 {
+    display: block;
+    font-size: 1.5em;
+    margin-top: 0.83em;
+    margin-bottom: 0.83em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+    padding-left: 15px;
+    color: #4aaaa5;
+    font-family: 'Georgia', Times, Times New Roman, serif;
+}
+.cap {
+    position: absolute;
+    padding:5px 0;
+    font-size: 22px;
+    font-weight: bold; 
+    text-transform: uppercase;
+    top: 220px;
+    width: 250px;
+    text-align: center;
+    color: white;
+    background-color: #4aaaa5;
+    font-family: 'Georgia', Times, Times New Roman, serif;
+}
+nav {
+    padding: 6px 72px 6px 6px;
+    font-size: 120%;
+    display: inline;
+    float: right;
+}
+nav a {
+    text-decoration: none;
+    color: #9fa9bf;
+}
+nav a:hover {
+    color: #4aaaa5;
+}
+.navContainer {
+    width:100%;
+    padding-top: 25px;
+    height: 34px;
+    background-color: white;
+}
+#main {
+  clear:both;
+  overflow: auto;
+}
+#wrapper {
+  display: block;
+  min-height: 100%
+    width: 100%;
+    margin: 0 auto;
+    background-image: url(../../images/halftone.png);
+}
+#leftcolumn,
+#rightcolumn {
+    border: 1px solid white;
+    float: left;
+    margin-top: 10px;
+    padding-bottom: 30px;
+}
+#leftcolumn {
+    width: 64%;
+    margin-left: 10px;
+    background-color: #ffffff;
+}
+#rightcolumn {
+    width: 32%;
+    margin-left: 10px;
+    margin-right: 10px;
+    background-color: #ffffff;
+}
+input[type=text],
+select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+input[type=submit] {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+.containerCenter{ 
+width:85%;
+margin: 0 auto; 
+padding: 5px 0 10px 0;
+
+}
+
+.image {
+    width: 100%;
+    /* for IE 6 */
+}
+
+.sidebar {
+    float: left;
+    width: 50px;
+    margin: 10px;
+}
+
+img {
+  width: 250px;
+  clear: left;
+  margin-bottom: 1px;
+  margin-right: 10px;
+}
+
+figcaption {
+  background-color: #4aaaa5;
+  color: white;
+  font-size: 18px;
+  text-transform: uppercase;
+  width: 250px;
+  text-align: center;
+  padding: 5px 0;
+  display: block;
+  float: left;
+  position: absolute;
+  top: 80px; 
+
+
+}
+
+figure {
+  position: relative;
+  float: left;
+}
