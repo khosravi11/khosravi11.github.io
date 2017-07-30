@@ -1,0 +1,36 @@
+hr {
+  width: 90% !important;
+}
+body{
+   background-color: #e6ecf0 !important;
+   padding-bottom: 80px;
+  
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 90%;
+    height: 55px;
+}
+
+figcaption {
+  background-color: #4aaaa5;
+  color: white;
+  font-size: 18px;
+  text-transform: uppercase;
+  width: 400px;
+  text-align: center;
+  padding: 5px 0;
+  display: block;
+  float: left;
+  position: absolute;
+  bottom: 10px; 
+
+
+}
+
+figure {
+  position: relative;
+  float: left;
+}
