@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Saam's Portfolio</title>
+	<link rel = "stylesheet" type = "text/css" href = "assets/css/reset.css" />
+	<link rel = "stylesheet" type = "text/css" href = "assets/css/style.css" />
+
+</head>
+<body>
+<div class="wrapper">
+   <h1>Hangman</h1>
+    <p>Use the alphabet below to guess the word, or click hint to get a clue. </p>
+</div>
+<div id="buttons">
+    </div><br><br><br><br><br><br>  <br><br><br> 
+<div class="wrapper">
+    
+    <div stlye="clear:both; disply:block;">
+
+    <p id="catagoryName"></p>
+    <div id="hold"> 
+    </div><br>
+    <p id="mylives"></p> <br>
+    <div class="container">
+    <input type="button" value="Play again" onClick="window.location.reload()">
+    </div>
+</div>
+
+
+
+<script type="text/javascript">
+    
+    window.onload = function () {
+
+  var alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h',
+        'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's',
+        't', 'u', 'v', 'w', 'x', 'y', 'z'];
+  
+  var cats;         // Array of topics
+  var chCats;     // Selected catagory
+  var hint ;          // Word hint
+  var word ;              // Selected word
+  var guess ;             // Geuss
+  var geusses = [ ];      // Stored geusses
+  var lives ;             // Lives
+  var count ;           // Count correct geusses
+  var space;              // Number of spaces in word '-'
+
+  // Get elements
+  var showLives = document.getElementById("mylives");
+  var showCatagory = document.getElementById("scatagory");
+  var hint = document.getElementById("hint");
+  var showClue = document.getElementById("clue");
+
+
+
+  // create alphabet ul
+  var buttons = function () {
+    myButtons = document.getElementById('buttons');
+    letters = document.createElement('ul');
+
+    for (var i = 0; i < alphabet.length; i++) {
+      letters.id = 'alphabet';
+      list = document.createElement('li');
+      list.id = 'letter';
+      list.innerHTML = alphabet[i];
+      check();
+      myButtons.appendChild(letters);
+      letters.appendChild(list);
+    }
+  }
+    
+  
+  // Select Catagory
+  var selectCat = function () {
+    if (chCats === cats[0]) {
+      catagoryName.innerHTML = "The Chosen Category Is UEFA Futbol Teams";
+    } else if (chCats === cats[1]) {
+      catagoryName.innerHTML = "The Chosen Category Is Football Teams";
+    } else if (chCats === cats[2]) {
+      catagoryName.innerHTML = "The Chosen Category Is Star Wars";
+    }
+  }
+
+  // Create geusses ul
+   result = function () {
+    wordHolder = document.getElementById('hold');
+    correct = document.createElement('ul');
+
+    for (var i = 0; i < word.length; i++) {
+      correct.setAttribute('id', 'my-word');
+      guess = document.createElement('li');
+      guess.setAttribute('class', 'guess');
+      if (word[i] === "-") {
+        guess.innerHTML = "-";
+        space = 1;
+      } else {
+        guess.innerHTML = "_";
+      }
+
+      geusses.push(guess);
+      wordHolder.appendChild(correct);
+      correct.appendChild(guess);
+    }
+  }
+  
+  // Show lives
+   comments = function () {
+    showLives.innerHTML = "You have " + lives + " lives";
+    if (lives < 1) {
+      showLives.innerHTML = "Game Over";
+    }
+    for (var i = 0; i < geusses.length; i++) {
+      if (count + space === geusses.length) {
+        showLives.innerHTML = "You Win!";
+      }
+    }
+  }
+
+      // Animate man
+  var animate = function () {
+    var drawMe = lives ;
+    drawArray[drawMe]();
+  }
+
+  
+   
+
+  // OnClick Function
+   check = function () {
+    list.onclick = function () {
+      var geuss = (this.innerHTML);
+      this.setAttribute("class", "active");
+      this.onclick = null;
+      for (var i = 0; i < word.length; i++) {
+        if (word[i] === geuss) {
+          geusses[i].innerHTML = geuss;
+          count += 1;
+        } 
+      }
+      var j = (word.indexOf(geuss));
+      if (j === -1) {
+        lives -= 1;
+        comments();
+        animate();
+      } else {
+        comments();
+      }
+    }
+  }
+  
+    
+  // Play
+  play = function () {
+    cats = [
+        ["real-madrid", "chelsea", "juventes", "bayern-munich", "machester-united"],
+        ["raiders", "eagles", "49ers", "browns", "dolphins"],
+        ["vader", "luke", "anakin", "blaster", "obi-wan"]
+    ];
+
+    chCats = cats[Math.floor(Math.random() * cats.length)];
+    word = chCats[Math.floor(Math.random() * chCats.length)];
+    word = word.replace(/\s/g, "-");
+    console.log(word);
+    buttons();
+
+    geusses = [ ];
+    lives = 5;
+    count = 0;
+    space = 0;
+    result();
+    comments();
+    selectCat();
+  }
+
+  play();
+  
+
+
+}
+
+
+
+</script>
+</body>
+</html>
