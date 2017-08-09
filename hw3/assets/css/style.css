@@ -36,12 +36,14 @@ p{
 }
 
 #alphabet {
+  cursor:pointer;
   margin:15px auto;
   padding:0;
   max-width:900px;
 }
 
 #alphabet li {
+  cursor:pointer;
   float:left;
   margin: 0 10px 10px 0;
   list-style:none;
