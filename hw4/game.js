@@ -1,3 +1,7 @@
+$( document ).ready(function() {
+    console.log( "ready!" );
+
+
 var goal = Math.floor((Math.random() * 101) + 19);
 console.log(goal);
 var gem1 = Math.floor((Math.random() * 12) + 1);
@@ -84,4 +88,6 @@ $("#gem4").on("click", function() {
     $("#gem4Val").html("Val:" + gem4);
     $("#counter").html("Score:" + counter);
     check();
+});
+	
 });
