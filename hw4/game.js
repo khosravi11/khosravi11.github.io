@@ -34,6 +34,8 @@ function reset() {
 	$("#gem2Val").html("Val:");
 	$("#gem3Val").html("Val:");
 	$("#gem4Val").html("Val:");
+   	$("#counter").html("Score:" + counter);
+	
 
 };
 
