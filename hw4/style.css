@@ -1,1 +1,8 @@
 
+.dispInline {
+	display: inline;
+}
+
+div {
+	padding: 0 20px;
+}
