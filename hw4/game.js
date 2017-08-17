@@ -15,6 +15,7 @@ console.log(gem4);
 var counter = 0;
 var wins = 0;
 var losses = 0;
+var moves = 0;
 
 function reset() {
 
@@ -63,32 +64,40 @@ $("#wins").html("Wins: " + wins);
 $("#losses").html("Losses: " + losses);
 
 $("#gem1").on("click", function() {
+    moves++;
     counter = counter + gem1;
-    $("#gem1Val").html("Val:" + gem1);
+    $("#gem1Val").html(gem1);
     $("#counter").html("Score:" + counter);
+    $("#moves").html("Moves:" + moves);
     check();
 
 });
 
 $("#gem2").on("click", function() {
+    moves++;
     counter = counter + gem2;
-    $("#gem2Val").html("Val:" + gem2);
+    $("#gem2Val").html(gem2);
     $("#counter").html("Score:" + counter);
+    $("#moves").html("Moves:" + moves);
     check();
 
 });
 
 $("#gem3").on("click", function() {
+    moves++;
     counter = counter + gem3;
-    $("#gem3Val").html("Val:" + gem3);
+    $("#gem3Val").html(gem3);
     $("#counter").html("Score:" + counter);
+    $("#moves").html("Moves:" + moves);
     check();
 });
 
 $("#gem4").on("click", function() {
+    moves++;
     counter = counter + gem4;
-    $("#gem4Val").html("Val:" + gem4);
+    $("#gem4Val").html(gem4);
     $("#counter").html("Score:" + counter);
+    $("#moves").html("Moves:" + moves);
     check();
 });
 	
