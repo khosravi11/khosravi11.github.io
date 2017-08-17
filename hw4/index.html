@@ -2,54 +2,60 @@
 <html lang="en">
 
 <head>
-  <title>Gem Game</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-	<script type='text/javascript' src='game.js'></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-	<link rel = "stylesheet" type = "text/css" href = "reset.css" />
-	<link rel = "stylesheet" type = "text/css" href = "style.css" />
-	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <title>Gem Game</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous"></script>
+    <script type='text/javascript' src='game.js'></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+    crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="reset.css" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+    crossorigin="anonymous">
 
 </head>
+
 <body>
-  
-<div class="container-fluid text-center">    
-    <div class="col-md-2">
-     
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">
+
+        </div>
+        <div class="col-md-5">
+            <h1 class="text-center" id="goal"></h1>
+            <div class="row">
+            <div class="col-md-12 text-center">
+                <div class="dispInline" id="gem1"><img style="height: 100px;" src="images/red.png" /> </div>
+                <div class="dispInline" id="gem2"><img style="height: 100px;" src="images/green.png" /> </div>
+                <div class="dispInline" id="gem3"><img style="height: 100px;" src="images/blue.png" /> </div>
+                <div class="dispInline" id="gem4"><img style="height: 100px;" src="images/purple.png" /> </div>
+            </div>
+            </div>
+            <div class="row">
+            <div class="col-md-12 text-center">
+                <div class="dispInline col-md-3" id="gem1Val">gem1</div>
+                <div class="dispInline col-md-3" id="gem2Val">gem2</div>
+                <div class="dispInline col-md-3" id="gem3Val">gem3</div>
+                <div class="dispInline col-md-3" id="gem4Val">gem4</div>
+                </div>
+            </div>
+            <div class="text-center" id="counter">Score: </div>
+            <div class="text-center" id="wins">Wins: </div>
+            <div class="text-center" id="losses">Losses: </div>
+            <div class="text-center" id="moves">Moves: </div>
+<div class="row">
+<div class="col-md-12 text-center">
+            <input type="button" value="Refresh Wins and Losses" onClick="window.location.reload()">
+            </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+        </div>
     </div>
-    <div class="col-md-8 well"> 
-     <h1 id="goal"></h1>
-<div style="padding-bottom: 20px;">
-  <button id="gem1">gem1</button> 
-
-  <button id="gem2">gem2</button>
-
-  <button id="gem3">gem3</button>
-
-  <button id="gem4">gem4</button>
-
-
 </div>
-<div style="padding: 0px 0px 20px 0px;">
-<div id="gem1Val" style="display: inline; padding: 1px 2px 20px 0px;">gem1</div>
-<div id="gem2Val" style="display: inline; padding: 1px 6px 20px 6px;">gem2</div>
-<div id="gem3Val" style="display: inline; padding: 1px 6px 20px 6px;">gem3</div>
-<div id="gem4Val" style="display: inline; padding: 1px 6px 20px 6px;">gem4</div>
-</div>
-<div id="counter">Score: </div>
-  <div id="wins">Wins: </div>
-  <div id="losses">Losses: </div>
-	    
-    <input type="button" value="Refresh Wins and Losses" onClick="window.location.reload()">
-</div>
-
-
- 
-    <div class="col-md-2">
-    </div>
-  </div>
 
 </body>
+
 </html>
