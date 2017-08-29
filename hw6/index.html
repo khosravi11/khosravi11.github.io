@@ -45,7 +45,7 @@
 
     $(".button").on("click", function() {
       var person = $(this).attr("data-animal");
-      var queryURL = "http://api.giphy.com/v1/gifs/search?q=" +
+      var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
         person + "&api_key=7fc456270f9040b0b2f34588fdf2c817&limit=10";
 
       $.ajax({
