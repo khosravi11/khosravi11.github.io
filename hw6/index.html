@@ -62,17 +62,7 @@
               $("#gifs-appear-here").prepend(gifDiv);
             
           }
-             $("#searchTerm").on("submit", function(event) {
-        event.preventDefault(); 
-
-        searchTerm = $("#animalTerm").val().trim();
-        var animalButton = $("<button>");
-        animalButton.attr("data-animal", searchTerm);
-        animalButton.attr("class", "button");
-        animalButton.text(searchTerm);
-        $("#buttonsGif").append(animalButton);
-      });
-
+            
 
         });
     });
