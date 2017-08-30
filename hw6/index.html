@@ -49,7 +49,9 @@
 
 
     // Event listener for all button elements
-    $(".button").on("click", function() {
+    $("#buttonsGif").on("click", '.button', function() {
+
+      $("#gifs-appear-here").html("");
       // In this case, the "this" keyword refers to the button that was clicked
       var person = $(this).attr("data-animal");
       // Constructing a URL to search Giphy for the name of the person who said the quote
