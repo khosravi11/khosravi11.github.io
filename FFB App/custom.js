@@ -2806,10 +2806,15 @@ var playerTeam = "";
 var playerPosRank = "";
 var playerBye = "";
 var playerRank = "";
+var pickedPlayers =[];
+var playerRankp = "";
+var printPlayer = true;
+var buttonColor = 'primary';
 
 for (var i = 0; i < players.length; i++) {
 
     playerName = players[i].Player;
+    playerNameTrim = players[i].Player.replace(/\s/g,'');
     playerPos = players[i].Position;
     playerTeam = players[i].Team;
     playerPosRank = players[i].PosRank;
@@ -2817,55 +2822,168 @@ for (var i = 0; i < players.length; i++) {
     playerRank = players[i].Rank;
 
 
+    if (playerPos === 'QB') {
+        buttonColor = 'danger';
+    }
+    if (playerPos === 'RB') {
+        buttonColor = 'success';
 
-    $("#playerButtons").append("<button class='button btn btn-primary' data-player='" +
-        playerName + "' + data-pos='" +
-        playerPos + "'>" +
+    }
+    if (playerPos === 'WR') {
+        buttonColor = 'info';
+
+    }
+    if (playerPos === 'TE') {
+        buttonColor = 'warning';
+    }
+    if (playerPos === 'K' || playerPos === 'DST') {
+        buttonColor = 'primary';
+
+    }
+
+
+
+
+
+    $("#playerButtons").append("<button class='button btn btn-" + buttonColor +"' data-player='" +
+        playerName + "'data-pos='" +
+        playerPos + "'" + "data-rank='" +
+        playerRank + "'" + "id='" +
+        playerRank + "player'"+">" +
         playerName + "<br>" +
         playerPos + "<br>" +
         playerTeam + "<br>" +
-        playerPosRank + "</button>")
-
+        playerPosRank + "</button>");
 };
 
 $("#playerButtons").on("click", ".button", function() {
 
     playerName = $(this).data("player");
     playerPos = $(this).data("pos");
+    playerRank = $(this).data("rank");
+    pickedPlayers.push(playerRank);
     $(this).remove();
 
-    console.log(playerPos);
+
+    function printPos(x) {
+        
+        $("#picked" + x).append("<p class='playerName  text-center' data-player='" +
+        playerName + "'data-pos='" +
+        playerPos + "'" + "data-rank='" +
+        playerRank + "'" +">" + playerName + "</p>");
+        $(".playerName").css("text-decoration", "line-through");
+        $(".playerName").css("font-size", "18px");
+ }
 
     if (playerPos === 'QB') {
-        $("#pickedQB").append("<p class='playerName  text-center'>" + playerName + "</p>");
-        $(".playerName").css("text-decoration", "line-through");
-        $(".playerName").css("font-size", "18px");
-
+        printPos(playerPos);
     }
     if (playerPos === 'RB') {
-        $("#pickedRB").append("<p class='playerName  text-center'>" + playerName + "</p>");
-        $(".playerName").css("text-decoration", "line-through");
-        $(".playerName").css("font-size", "18px");
+       printPos(playerPos);
 
     }
     if (playerPos === 'WR') {
-        $("#pickedWR").append("<p class='playerName  text-center'>" + playerName + "</p>");
-        $(".playerName").css("text-decoration", "line-through");
-        $(".playerName").css("font-size", "18px");
+        printPos(playerPos);
 
     }
     if (playerPos === 'TE') {
-        $("#pickedTE").append("<p class='playerName  text-center'>" + playerName + "</p>");
-        $(".playerName").css("text-decoration", "line-through");
-        $(".playerName").css("font-size", "18px");
-
+       printPos(playerPos);
     }
     if (playerPos === 'K' || playerPos === 'DST') {
-        $("#pickedKick").append("<p class='playerName  text-center'>" + playerName + "</p>");
-        $(".playerName").css("text-decoration", "line-through");
-        $(".playerName").css("font-size", "18px");
+       printPos(playerPos);
 
     }
 
 
 });
+
+
+$(".pickedPos").on("click", ".playerName", function() {
+    $("#playerButtons").html("");
+    playerName = $(this).data("player");
+    playerPos = $(this).data("pos");
+    playerRankp = $(this).data("rank");
+    $(this).remove();
+
+    for (var j = 0;  j<pickedPlayers.length; j++){
+
+        if(playerRankp === pickedPlayers[j]){  
+
+        pickedPlayers.splice(j, 1);        
+
+
+        }
+    };
+
+    for (var i = 0; i < players.length; i++) {
+
+    playerName = players[i].Player;
+    playerNameTrim = players[i].Player.replace(/\s/g,'');
+    playerPos = players[i].Position;
+    playerTeam = players[i].Team;
+    playerPosRank = players[i].PosRank;
+    playerBye = players[i].Bye;
+    playerRank = players[i].Rank;
+
+
+    for (var k = 0; k < pickedPlayers.length; k++) {
+        
+
+
+        if(pickedPlayers[k] === playerRank){
+
+            printPlayer = false;
+            break;
+
+        }
+        else{
+
+            printPlayer = true;
+
+        }
+    }
+
+    if (printPlayer === true){
+         if (playerPos === 'QB') {
+        buttonColor = 'danger';
+    }
+    if (playerPos === 'RB') {
+        buttonColor = 'success';
+
+    }
+    if (playerPos === 'WR') {
+        buttonColor = 'info';
+
+    }
+    if (playerPos === 'TE') {
+        buttonColor = 'warning';
+    }
+    if (playerPos === 'K' || playerPos === 'DST') {
+        buttonColor = 'primary';
+
+    }
+
+
+        $("#playerButtons").append("<button class='button btn btn-" + buttonColor +"' data-player='" +
+        playerName + "'data-pos='" +
+        playerPos + "'" + "data-rank='" +
+        playerRank + "'" + "id='" +
+        playerRank + "player'"+">" +
+        playerName + "<br>" +
+        playerPos + "<br>" +
+        playerTeam + "<br>" +
+        playerPosRank + "</button>");
+
+    }
+
+};
+
+
+    
+
+    
+
+
+});
+
+
