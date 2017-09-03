@@ -2622,6 +2622,46 @@ var playerRankp = "";
 var printPlayer = true;
 var buttonColor = 'primary';
 
+for (var i = 0; i < players.length; i++) {
+
+        playerName = players[i].Player;
+        playerNameTrim = players[i].Player.replace(/\s/g, '');
+        playerPos = players[i].Position;
+        playerTeam = players[i].Team;
+        playerPosRank = players[i].PosRank;
+        playerBye = players[i].Bye;
+        playerRank = players[i].Rank;
+
+        if (playerPos === 'QB') {
+                buttonColor = 'danger';
+            }
+            if (playerPos === 'RB') {
+                buttonColor = 'success';
+
+            }
+            if (playerPos === 'WR') {
+                buttonColor = 'info';
+
+            }
+            if (playerPos === 'TE') {
+                buttonColor = 'warning';
+            }
+            if (playerPos === 'K' || playerPos === 'DST') {
+                buttonColor = 'primary';
+            }
+
+            $("#playerButtons").append("<button class='button btn btn-" + buttonColor + "' data-player='" +
+                playerName + "'data-pos='" +
+                playerPos + "'" + "data-rank='" +
+                playerRank + "'" + "id='" +
+                playerRank + "player'" + ">" +
+                playerName + "<br>" +
+                playerPos + "<br>" +
+                playerTeam + "<br>" +
+                playerPosRank + "</button>");
+};
+
+
 $("#playerButtons").on("click", ".button", function() {
 
     playerName = $(this).data("player");
