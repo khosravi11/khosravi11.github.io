@@ -1,0 +1,109 @@
+<html>
+<head>
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link src="style.css">
+
+</head>
+
+<body>
+<div class="container">
+	<div class="jumbotron text-center">
+		<h1>Train</h1>
+	</div>
+	<div class="panel panel-primary">
+  <!-- Default panel contents -->
+  <div class="panel-heading">Current Employees</div>
+  <div class="panel-body">
+
+  </div>
+  <table id="currnet-employee" class="table">
+  <tr>
+  		<th>Train</th>
+  		<th>Destination</th>
+  		<th>Frequency</th>
+  		<th>Next Arrival  </th>
+  		<th>Minutes Away  </th>
+	</tr>
+ 
+  </table>
+</div>
+<div class="panel panel-primary">
+  <!-- Default panel contents -->
+  <div class="panel-heading">Add Train</div>
+  <div class="panel-body">
+<form id="add-employee-form">
+  				<div class="form-group row">
+  <label for="example-text-input" class="col-2 col-form-label">Train Name</label>
+  <div class="col-10">
+    <input class="form-control" type="text" value="" id="name-input">
+  </div>
+</div>
+	<div class="form-group row">
+  <label for="example-text-input" class="col-2 col-form-label">Destination</label>
+  <div class="col-10">
+    <input class="form-control" type="text" value="" id="role-input">
+  </div>
+</div>
+
+<div class="form-group row">
+  <label for="example-text-input" class="col-2 col-form-label">First Train</label>
+  <div class="col-10">
+    <input class="form-control" type="text" value="" id="time-input">
+  </div>
+</div>
+<div class="form-group row">
+  <label for="example-number-input" class="col-2 col-form-label">Frequency</label>
+  <div class="col-10">
+    <input class="form-control" type="number" value="" id="rate-input">
+  </div>
+</div>
+<button id="add-employee" type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+  </div>
+
+	</div>	
+	</div>	
+
+
+
+	<script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+	<!-- ============================================================================================================================== -->
+	<!-- ============================================================================================================================== -->
+	<!-- ============================================================================================================================== -->
+	<!-- ============================================================================================================================== -->
+	<!-- ============================================================================================================================== -->
+
+	<script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyCrxBIYJNCvWYUZE4L8xTxG4j94-No1vTA",
+    authDomain: "timesheet-80789.firebaseapp.com",
+    databaseURL: "https://timesheet-80789.firebaseio.com",
+    projectId: "timesheet-80789",
+    storageBucket: "timesheet-80789.appspot.com",
+    messagingSenderId: "910283486125"
+  };
+  firebase.initializeApp(config);
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+
+	<!-- ============================================================================================================================== -->
+	<!-- ============================================================================================================================== -->
+	<!-- ============================================================================================================================== -->
+	<!-- ============================================================================================================================== -->
+		
+	<script src="logic.js"></script>
+
+</body>
+
+
+
+
+</html>
