@@ -7,7 +7,7 @@
         var clientSecret = '<your_client_secret_here>';
 
         $.ajax({
-            url: 'https://api.uber.com/v1.2/products?latitude=37.7759792&longitude=-122.41823',
+            url: 'https://api.uber.com/v1.2/estimates/price?start_latitude=37.7752315&start_longitude=-122.418075&end_latitude=37.7752415&end_longitude=-122.518075',
             type: 'GET',
             beforeSend: function (xhr) {
                 xhr.setRequestHeader("Authorization", "Token PFQZ7tdwz7A1HQCxtT4mGR041x_2wgpUtoIdF7gE");
