@@ -140,7 +140,7 @@ function callback(results, status) {
         console.log(priceLevel);
         console.log(rating);
         console.log(isOpen);
-        $("#info").append("<p>" +name + "<br>" + address + "<br>" + priceLevel + "<br>" + rating + "<br>" + isOpen + "</p>");
+        $("#info").append("<p>" +name + "<br> Address: " + address + "<br> Price Level (out of 5): " + priceLevel + "<br> Rating: " + rating + "<br>" + isOpen + "</p>");
 
     }
 }
@@ -187,10 +187,8 @@ $.ajax({
     console.log(lyftRideType);
 
     $("#lyft").append("<p id='lyftInfo'>" + "$" + lyftCost/100 + "<br>" + lyftRideType + "</p>");
-});
 
-//Ride ETA: passing in Latitude and Longitude
-$.ajax({
+    $.ajax({
     url: 'https://api.lyft.com/v1/eta?lat=' + latStartText + '&lng=' + lngStartText,
     type: 'GET',
     beforeSend: function(xhr) {
@@ -214,6 +212,10 @@ $.ajax({
     $("#lyftInfo").append("<br> ETA: " +lyftTime/60);
 
 });
+});
+
+//Ride ETA: passing in Latitude and Longitude
+
 $.ajax({
     url: 'https://api.uber.com/v1.2/estimates/price?start_latitude=' + latStartText + '&start_longitude=' + lngStartText + '&end_latitude=' + latEndText + '&end_longitude=' + lngEndText,
     type: 'GET',
@@ -237,11 +239,7 @@ $.ajax({
 
      $("#uber").append("<p id='uberInfo'>" + "$" + uberCost + "<br>" + uberRideType + "</p>");
 
-
-
-});
-
-$.ajax({
+     $.ajax({
     url: 'https://api.uber.com/v1.2/estimates/time?start_latitude=' + latStartText + '&start_longitude=' + lngStartText,
     type: 'GET',
     beforeSend: function(xhr) {
@@ -262,11 +260,15 @@ $.ajax({
     console.log(uberTime);
     console.log(uberRideType);
 
-    $("#uberInfo").append("<br> ETA: " +uberTime/60);
+    $("#uberInfo").append("<br> ETA: " + uberTime/60);
 
 
 
 });
+
+});
+
+
     
     </script> 
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDcPKxGxES3dhenheALWRDi2YymPDjEhjk&libraries=places&callback=initMap">
