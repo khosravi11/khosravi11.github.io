@@ -237,12 +237,10 @@ li.task:first-child {
 #uber {
     display: inline-block;
 
-    height: 20vh;
     width: 50%;
 }
 #lyft {
     display: inline;
     float: right;
-    height: 20vh;
     width: 50%;
 }

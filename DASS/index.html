@@ -209,7 +209,7 @@ $.ajax({
     console.log(lyftTime);
     console.log(lyftRideType);
 
-    $("#lyftInfo").append("<br> ETA: " +lyftTime/60);
+    $("#lyftInfo").append("<br> ETA: " +lyftTime/60 + "Minutes");
 
 });
 });
@@ -260,7 +260,7 @@ $.ajax({
     console.log(uberTime);
     console.log(uberRideType);
 
-    $("#uber").append("<p>" + uberTime + "</p>")
+    $("#uber").append("<br> ETA: " + uberTime/60 + " Minutes")
 
 
 
