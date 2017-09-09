@@ -186,11 +186,8 @@ $.ajax({
     var lyftCost = lyftCostResults.cost_estimates[3].estimated_cost_cents_max;
     var lyftRideType = lyftCostResults.cost_estimates[3].ride_type;
 
-console.log(lyftCost + 'cents');
-console.log(lyftRideType);
-
-
-
+    console.log(lyftCost + 'cents');
+    console.log(lyftRideType);
 });
 
 //Ride ETA: passing in Latitude and Longitude
@@ -230,7 +227,18 @@ console.log(lyftRideType);
             error: function (error) {
                 console.log(error);
             }
-        });
+        }).done(function(response){
+
+    var uberResults = response;
+    var uberCost = uberResults.prices[7].high_estimate;
+    var uberRideType = uberResults.prices[7].display_name;
+
+    console.log(uberCost);
+    console.log(uberRideType);
+
+
+
+});
         
          $.ajax({
             url: 'https://api.uber.com/v1.2/estimates/time?start_latitude=' + latStartText + '&start_longitude=' + lngStartText,
@@ -244,7 +252,18 @@ console.log(lyftRideType);
             error: function (error) {
                 console.log(error);
             }
-        });
+        }).done(function(response){
+
+    var uberResults = response;
+    var uberTime = uberResults.times[6].estimate;
+    var uberRideType = uberResults.times[6].display_name;
+
+    console.log(uberCost);
+    console.log(uberRideType);
+
+
+
+});
     
     </script> 
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDcPKxGxES3dhenheALWRDi2YymPDjEhjk&libraries=places&callback=initMap">
