@@ -83,7 +83,7 @@ var latStartText = latStart.toString();
 var lngStartText = lngStart.toString();
 var latEndText = latEnd.toString();
 var lngEndText = lngEnd.toString();
-var keyword = ['rooftop'];
+var keyword = ['whiskey'];
 var radius = 50000;
 // This example requires the Places library. Include the libraries=places
 // parameter when you first load the API. For example:
@@ -129,7 +129,7 @@ function callback(results, status) {
         var isOpen = results[randNum].opening_hours;
         isOpen = isOpen.open_now;
 
-        if (isOpen === 'true') {
+        if (isOpen === true) {
             isOpen = 'Open';
         } else {
             isOpen = 'Closed';
@@ -260,7 +260,7 @@ $.ajax({
     console.log(uberTime);
     console.log(uberRideType);
 
-    $("#uberInfo").append("<br> ETA: " + uberTime/60 + " Minutes")
+    $("#uber").append("<br> ETA: " + uberTime/60 + " Minutes")
 
 
 
