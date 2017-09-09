@@ -140,11 +140,9 @@ function callback(results, status) {
         console.log(priceLevel);
         console.log(rating);
         console.log(isOpen);
-        $("#info").append("<p>" +name + "<br> Address: " + address + "<br> Price Level (out of 5): " + priceLevel + "<br> Rating: " + rating + "<br>" + isOpen + "</p>");
-
+        $("#info").append("<p>" + name + "<br> Address: " + address + "<br> Price Level (out of 5): " + priceLevel + "<br> Rating: " + rating + "<br>" + isOpen + "</p>");
     }
 }
-
 
 function createMarker(place) {
     var placeLoc = place.geometry.location;
@@ -159,113 +157,134 @@ function createMarker(place) {
     });
 }
 
+//Nested Ajax Call
 
-
-//Ride Pricing: passing in Latitude and Longitude
 $.ajax({
-
-    url: 'https://api.lyft.com/v1/cost?start_lat=' + latStartText + '&start_lng=' + lngStartText + '&end_lat=' + latEndText + '&end_lng=' + lngEndText,
-    type: 'GET',
-    beforeSend: function(xhr) {
-        xhr.setRequestHeader("Authorization", "Bearer otu4KK6PnP6kPSLijMWxFgjoHFIQk5aSTZ16ba98cuO23dCUy/8e1Dw37bEOEerpQJLZW3/tKbPw5iLGAWdwVOFGFUa6Nfd8xZ/HRSf0bTV8FNvAxYePDIE=");
-    },
+    url: 'https://maps.googleapis.com/maps/api/geocode/json?address=1600+Amphitheatre+Parkway,+Mountain+View,+CA&key=AIzaSyDcPKxGxES3dhenheALWRDi2YymPDjEhjk',
+    method: "GET",
     success: function(response) {
         console.log(response);
     },
     error: function(error) {
         console.log(error);
     }
-
+    // After the data comes back from the API
 
 }).done(function(response) {
 
-    var lyftCostResults = response;
-    var lyftCost = lyftCostResults.cost_estimates[3].estimated_cost_cents_max;
-    var lyftRideType = lyftCostResults.cost_estimates[3].ride_type;
+    var geoCoded = response;
+    geoCodedlat = geoCoded.results[0].geometry.location.lat;
+    geoCodedlng = geoCoded.results[0].geometry.location.lng;
 
-    console.log(lyftCost + 'cents');
-    console.log(lyftRideType);
+    console.log(geoCodedlat);
+    console.log(geoCodedlng);
 
-    $("#lyft").append("<p id='lyftInfo'>" + "$" + lyftCost/100 + "<br>" + lyftRideType + "</p>");
+    //Lyft Cost Ajax Call
 
     $.ajax({
-    url: 'https://api.lyft.com/v1/eta?lat=' + latStartText + '&lng=' + lngStartText,
-    type: 'GET',
-    beforeSend: function(xhr) {
-        xhr.setRequestHeader("Authorization", "Bearer otu4KK6PnP6kPSLijMWxFgjoHFIQk5aSTZ16ba98cuO23dCUy/8e1Dw37bEOEerpQJLZW3/tKbPw5iLGAWdwVOFGFUa6Nfd8xZ/HRSf0bTV8FNvAxYePDIE=");
-    },
-    success: function(response) {
-        console.log(response);
-    },
-    error: function(error) {
-        console.log(error);
-    }
-}).done(function(response) {
 
-    var lyftResults = response;
-    var lyftTime = lyftResults.eta_estimates[1].eta_seconds;
-    var lyftRideType = lyftResults.eta_estimates[1].ride_type;
-
-    console.log(lyftTime);
-    console.log(lyftRideType);
-
-    $("#lyftInfo").append("<br> ETA: " +lyftTime/60 + "Minutes");
-
-});
-});
-
-//Ride ETA: passing in Latitude and Longitude
-
-$.ajax({
-    url: 'https://api.uber.com/v1.2/estimates/price?start_latitude=' + latStartText + '&start_longitude=' + lngStartText + '&end_latitude=' + latEndText + '&end_longitude=' + lngEndText,
-    type: 'GET',
-    beforeSend: function(xhr) {
-        xhr.setRequestHeader("Authorization", "Token PFQZ7tdwz7A1HQCxtT4mGR041x_2wgpUtoIdF7gE");
-    },
-    success: function(response) {
-        console.log(response);
-    },
-    error: function(error) {
-        console.log(error);
-    }
-}).done(function(response) {
-
-    var uberResults = response;
-    var uberCost = uberResults.prices[7].high_estimate;
-    var uberRideType = uberResults.prices[7].display_name;
-
-    console.log(uberCost);
-    console.log(uberRideType);
-
-     $("#uber").append("<p id='uber-info'>" + "$" + uberCost + "<br>" + uberRideType + "</p>");
-
-     $.ajax({
-    url: 'https://api.uber.com/v1.2/estimates/time?start_latitude=' + latStartText + '&start_longitude=' + lngStartText,
-    type: 'GET',
-    beforeSend: function(xhr) {
-        xhr.setRequestHeader("Authorization", "Token PFQZ7tdwz7A1HQCxtT4mGR041x_2wgpUtoIdF7gE");
-    },
-    success: function(response) {
-        console.log(response);
-    },
-    error: function(error) {
-        console.log(error);
-    }
-}).done(function(response) {
-
-    var uberResults = response;
-    var uberTime = uberResults.times[6].estimate;
-    var uberRideType = uberResults.times[6].display_name;
-
-    console.log(uberTime);
-    console.log(uberRideType);
-
-    $("#uber-info").append("<br> ETA: " + uberTime/60 + " Minutes")
+        url: 'https://api.lyft.com/v1/cost?start_lat=' + latStartText + '&start_lng=' + lngStartText + '&end_lat=' + geoCodedlat + '&end_lng=' + geoCodedlng,
+        type: 'GET',
+        beforeSend: function(xhr) {
+            xhr.setRequestHeader("Authorization", "Bearer otu4KK6PnP6kPSLijMWxFgjoHFIQk5aSTZ16ba98cuO23dCUy/8e1Dw37bEOEerpQJLZW3/tKbPw5iLGAWdwVOFGFUa6Nfd8xZ/HRSf0bTV8FNvAxYePDIE=");
+        },
+        success: function(response) {
+            console.log(response);
+        },
+        error: function(error) {
+            console.log(error);
+        }
 
 
+    }).done(function(response) {
 
-});
+        var lyftCostResults = response;
+        var lyftCost = lyftCostResults.cost_estimates[3].estimated_cost_cents_max;
+        var lyftRideType = lyftCostResults.cost_estimates[3].ride_type;
 
+        console.log(lyftCost + 'cents');
+        console.log(lyftRideType);
+
+        $("#lyft").append("<p id='lyftInfo'>" + "$" + lyftCost / 100 + "<br>" + lyftRideType + "</p>");
+
+        //Lyft ETA Ajax Call
+
+        $.ajax({
+            url: 'https://api.lyft.com/v1/eta?lat=' + latStartText + '&lng=' + lngStartText,
+            type: 'GET',
+            beforeSend: function(xhr) {
+                xhr.setRequestHeader("Authorization", "Bearer otu4KK6PnP6kPSLijMWxFgjoHFIQk5aSTZ16ba98cuO23dCUy/8e1Dw37bEOEerpQJLZW3/tKbPw5iLGAWdwVOFGFUa6Nfd8xZ/HRSf0bTV8FNvAxYePDIE=");
+            },
+            success: function(response) {
+                console.log(response);
+            },
+            error: function(error) {
+                console.log(error);
+            }
+        }).done(function(response) {
+
+            var lyftResults = response;
+            var lyftTime = lyftResults.eta_estimates[1].eta_seconds;
+            var lyftRideType = lyftResults.eta_estimates[1].ride_type;
+
+            console.log(lyftTime);
+            console.log(lyftRideType);
+
+            $("#lyftInfo").append("<br> ETA: " + lyftTime / 60 + "Minutes");
+        });
+    });
+
+    //Uber Cost Ajax Call
+
+    $.ajax({
+        url: 'https://api.uber.com/v1.2/estimates/price?start_latitude=' + latStartText + '&start_longitude=' + lngStartText + '&end_latitude=' + latEndText + '&end_longitude=' + lngEndText,
+        type: 'GET',
+        beforeSend: function(xhr) {
+            xhr.setRequestHeader("Authorization", "Token PFQZ7tdwz7A1HQCxtT4mGR041x_2wgpUtoIdF7gE");
+        },
+        success: function(response) {
+            console.log(response);
+        },
+        error: function(error) {
+            console.log(error);
+        }
+    }).done(function(response) {
+
+        var uberResults = response;
+        var uberCost = uberResults.prices[7].high_estimate;
+        var uberRideType = uberResults.prices[7].display_name;
+
+        console.log(uberCost);
+        console.log(uberRideType);
+
+        $("#uber").append("<p id='uber-info'>" + "$" + uberCost + "<br>" + uberRideType + "</p>");
+
+        //Uber ETA Ajax Call
+
+        $.ajax({
+            url: 'https://api.uber.com/v1.2/estimates/time?start_latitude=' + latStartText + '&start_longitude=' + lngStartText,
+            type: 'GET',
+            beforeSend: function(xhr) {
+                xhr.setRequestHeader("Authorization", "Token PFQZ7tdwz7A1HQCxtT4mGR041x_2wgpUtoIdF7gE");
+            },
+            success: function(response) {
+                console.log(response);
+            },
+            error: function(error) {
+                console.log(error);
+            }
+        }).done(function(response) {
+
+            var uberResults = response;
+            var uberTime = uberResults.times[6].estimate;
+            var uberRideType = uberResults.times[6].display_name;
+
+            console.log(uberTime);
+            console.log(uberRideType);
+
+            $("#uber-info").append("<br> ETA: " + uberTime / 60 + " Minutes")
+        });
+    });
 });
 
 
