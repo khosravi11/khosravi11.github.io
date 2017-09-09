@@ -140,6 +140,7 @@ function callback(results, status) {
         console.log(priceLevel);
         console.log(rating);
         console.log(isOpen);
+        $("#info").append("<p>" +name + "<br>" + address + "<br>" + priceLevel + "<br>" + rating + "<br>" + isOpen + "</p>");
 
     }
 }
@@ -184,6 +185,8 @@ $.ajax({
 
     console.log(lyftCost + 'cents');
     console.log(lyftRideType);
+
+    $("#lyft").append("<p id='lyftInfo'>" + "$" + lyftCost/100 + "<br>" + lyftRideType + "</p>");
 });
 
 //Ride ETA: passing in Latitude and Longitude
@@ -208,7 +211,7 @@ $.ajax({
     console.log(lyftTime);
     console.log(lyftRideType);
 
-
+    $("#lyftInfo").append("<br> ETA: " +lyftTime/60);
 
 });
 $.ajax({
@@ -231,6 +234,8 @@ $.ajax({
 
     console.log(uberCost);
     console.log(uberRideType);
+
+     $("#uber").append("<p id='uberInfo'>" + "$" + uberCost + "<br>" + uberRideType + "</p>");
 
 
 
@@ -256,6 +261,8 @@ $.ajax({
 
     console.log(uberTime);
     console.log(uberRideType);
+
+    $("#uberInfo").append("<br> ETA: " +uberTime/60);
 
 
 
