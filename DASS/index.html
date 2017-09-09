@@ -74,17 +74,13 @@
      <div style="background-color: grey; color: white; font-size: 24px; font-weight: bold;" id="uber">uber</div>
      <div style="background-color: pink; color: white; font-size: 24px; font-weight: bold;" id="lyft">lyft</div>
     <script>
-var randNum = Math.floor((Math.random() * 20) + 1);
-var latStart = 37.872027;
-var lngStart = -122.271204;
-var latEnd = 37.804944;
-var lngEnd = -122.287292;
+var randNum = Math.floor((Math.random() * 20) + 1);  
+var latStart = 37.825256;
+var lngStart = -122.253574;
 var latStartText = latStart.toString();
 var lngStartText = lngStart.toString();
-var latEndText = latEnd.toString();
-var lngEndText = lngEnd.toString();
 var keyword = ['whiskey'];
-var radius = 50000;
+var radius = 10000;
 // This example requires the Places library. Include the libraries=places
 // parameter when you first load the API. For example:
 // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
@@ -237,7 +233,7 @@ $.ajax({
     //Uber Cost Ajax Call
 
     $.ajax({
-        url: 'https://api.uber.com/v1.2/estimates/price?start_latitude=' + latStartText + '&start_longitude=' + lngStartText + '&end_latitude=' + latEndText + '&end_longitude=' + lngEndText,
+        url: 'https://api.uber.com/v1.2/estimates/price?start_latitude=' + latStartText + '&start_longitude=' + lngStartText + '&end_latitude=' + geoCodedlat + '&end_longitude=' + geoCodedlng,
         type: 'GET',
         beforeSend: function(xhr) {
             xhr.setRequestHeader("Authorization", "Token PFQZ7tdwz7A1HQCxtT4mGR041x_2wgpUtoIdF7gE");
