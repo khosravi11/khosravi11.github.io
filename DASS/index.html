@@ -151,7 +151,7 @@
                 console.log(priceLevel);
                 console.log(rating);
                 console.log(isOpen);
-                $("#info").append("<p style='margin:0px;'>" + name + "<br> Address: " + address + "<br> Price Level (out of 5): " + priceLevel + "<br> Rating: " + rating + "<br>" + isOpen + "</p>");
+                $("#info").append("<span style='margin:0px;'>" + name + "<br> Address: " + address + "<br> Price Level (out of 5): " + priceLevel + "<br> Rating: " + rating + "<br>" + isOpen + "</span>");
 
                 $.ajax({
                     url: 'https://maps.googleapis.com/maps/api/geocode/json?address=' + address + '&key=AIzaSyDcPKxGxES3dhenheALWRDi2YymPDjEhjk',
@@ -199,7 +199,7 @@
                         console.log(lyftCost + 'cents');
                         console.log(lyftRideType);
 
-                        $("#lyft").append("<p style='margin:0px;' id='lyftInfo'>" + "$" + lyftCost / 100 + "<br>" + lyftRideType + "</p>");
+                        $("#lyft").append("<span style='margin:0px;' id='lyftInfo'>" + "$" + lyftCost / 100 + "<br>" + lyftRideType + "</span>");
 
                         //Lyft ETA Ajax Call
 
@@ -251,7 +251,7 @@
                         console.log(uberCost);
                         console.log(uberRideType);
 
-                        $("#uber").append("<p style='margin:0px;' id='uber-info'>" + "$" + uberCost + "<br>" + uberRideType + "</p>");
+                        $("#uber").append("<span style='margin:0px;' id='uber-info'>" + "$" + uberCost + "<br>" + uberRideType + "</span>");
 
                         //Uber ETA Ajax Call
 
