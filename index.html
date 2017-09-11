@@ -1,56 +1,277 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Saam's Portfolio</title>
-	<link rel = "stylesheet" type = "text/css" href = "assets/reset.css" />
-	<link rel = "stylesheet" type = "text/css" href = "assets/style.css" />
+    <meta charset="utf-8">
+    <title>DASS-Project</title><!-- reset css -->
+    <link href="assets/css/reset.css" rel="stylesheet"><!-- JQUERY -->
 
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js">
+    </script><!-- Bootstrap -->
+    <!-- Latest compiled and minified CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"><!-- Optional theme -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" rel="stylesheet"><!-- Latest compiled and minified JavaScript -->
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
+    </script><!-- reset css -->
+    <link href="assets/css/style.css" rel="stylesheet">
 </head>
 <body>
-<div class="navContainer">
+    <div id="taskbar" style="bottom: 0px;">
+        <div class="inner">
+            <ul>
+                <li class="task">
+                    <div class="iaRendered">
+                        <div class="taskContentWrapper" style="display: block;">
+                            <a href="/jump/personal-loans/loan-unsecured/">
+                            <div class="taskImageContainer"><img alt="" src="https://www04.wellsfargomedia.com/assets/images/homepage/wfi111_ic_nba_default3_50x50.png"></div>Dive Bars</a>
+                        </div>
+                    </div>
+                </li>
+                
+                <li class="task">
+                    <div class="iaRendered">
+                        <div class="taskContentWrapper" style="display: block;">
+                            <a href="/jump/personal-loans/loan-unsecured/">
+                            <div class="taskImageContainer"><img alt="" src="https://www04.wellsfargomedia.com/assets/images/homepage/wfi111_ic_nba_default3_50x50.png"></div>Dive Bars</a>
+                        </div>
+                    </div>
+                </li>
 
-	  <h1 style="width: 200px; display: inline;" >Saam Khosravi</h1>
-	<nav>
-	  <a href="index.html">About</a> |
-	  <a href="contact.html">Contact</a> |
-	  <a href="portfolio.html">Porfolio</a>
-	</nav> 
-</div>
-	<div id="wrapper">
+                <li class="task">
+                    <div class="iaRendered">
+                        <div class="taskContentWrapper" style="display: block;">
+                            <a href="/jump/personal-loans/loan-unsecured/">
+                            <div class="taskImageContainer"><img alt="" src="https://www04.wellsfargomedia.com/assets/images/homepage/wfi111_ic_nba_default3_50x50.png"></div>Dive Bars</a>
+                        </div>
+                    </div>
+                </li>
 
-    <div id="leftcolumn">
-    <h2>About Me</h2>
-        <hr>
-         <p><img src="images/aboutme.jpg"/ style="width:200px; float: left; padding: 0 7px 2px 0;" > Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ultricies dui eu faucibus dignissim. Nullam quis sem augue. Vestibulum id fermentum leo. Sed at tempor dui. Curabitur vehicula purus neque, id consectetur risus venenatis vel. Nam nibh ligula, gravida vitae tortor imperdiet, ullamcorper aliquam est. Morbi et pulvinar neque, imperdiet sodales quam. Nam id molestie quam, sit amet viverra tortor. Proin suscipit tempor augue a lacinia. Fusce porttitor est vel eros posuere consequat. Nullam dictum et lacus eu sagittis.</p>
+                <li class="task">
+                    <div class="iaRendered">
+                        <div class="taskContentWrapper" style="display: block;">
+                            <a href="/jump/personal-loans/loan-unsecured/">
+                            <div class="taskImageContainer"><img alt="" src="https://www04.wellsfargomedia.com/assets/images/homepage/wfi111_ic_nba_default3_50x50.png"></div>Dive Bars</a>
+                        </div>
+                    </div>
+                </li>
 
-       <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ultricies dui eu faucibus dignissim. Nullam quis sem augue. Vestibulum id fermentum leo. Sed at tempor dui. Curabitur vehicula purus neque, id consectetur risus venenatis vel. Nam nibh ligula, gravida vitae tortor imperdiet, ullamcorper aliquam est. Morbi et pulvinar neque, imperdiet sodales quam. Nam id molestie quam, sit amet viverra tortor. Proin suscipit tempor augue a lacinia. Fusce porttitor est vel eros posuere consequat. Nullam dictum et lacus eu sagittis.</p>
-    </div>
-    <div id="rightcolumn">
-         <h2>Connect With Me</h2>
-        <hr>
-        <div style="width:225px; margin: 0 auto;">
-        <div class="sidebar"><a target="_blank" href="https://github.com/khosravi11">
-        <img  style="width: 55px;" src="images/github.png"/></a>
+                <li class="task">
+                    <div class="iaRendered">
+                        <div class="taskContentWrapper" style="display: block;">
+                            <a href="/jump/personal-loans/loan-unsecured/">
+                            <div class="taskImageContainer"><img alt="" src="https://www04.wellsfargomedia.com/assets/images/homepage/wfi111_ic_nba_default3_50x50.png"></div>Dive Bars</a>
+                        </div>
+                    </div>
+                </li>
+
+            </ul>
         </div>
-		
-        <div class="sidebar"><a target="_blank" href="www.linkedin.com/in/saam-khosravi-552b3b33">
-        <img  style="width: 55px;" src="images/linkedin.png"/></a>
-        </div>
-
-        <div class="sidebar"><a target="_blank" href="https://stackexchange.com/users/11307301/saam-shirazian-khosravi">
-        <img  style="width: 55px;"  src="images/stack.png"/></a>
-        </div>
     </div>
+    <!-- buttons -->
+    <div style="clear: both;"></div>
+     <div id="map"></div>
+     <div style="background-color: black; color: white; font-size: 24px; font-weight: bold;" id="info">info</div>
+     <div style="background-color: grey; color: white; font-size: 24px; font-weight: bold;" id="uber">uber</div>
+     <div style="background-color: pink; color: white; font-size: 24px; font-weight: bold;" id="lyft">lyft</div>
+    <script>
+var randNum = Math.floor((Math.random() * 20) + 1);
+var latStart = 37.872027;
+var lngStart = -122.271204;
+var latEnd = 37.804944;
+var lngEnd = -122.287292;
+var latStartText = latStart.toString();
+var lngStartText = lngStart.toString();
+var latEndText = latEnd.toString();
+var lngEndText = lngEnd.toString();
+var keyword = ['rooftop'];
+var radius = 50000;
+// This example requires the Places library. Include the libraries=places
+// parameter when you first load the API. For example:
+// <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
 
-    </div>
-</div>
-<footer>
-<div style="background-color: #4aaaa5; height:2px; text-align: center; color: white; padding-top:15px;">
-&nbsp;
-</div>
-<div style="background-color: #666666; height:50px; text-align: center; color: white; padding-top:15px;">
-&#169; Copyright 2017 Saam Khosravi
-</div>
-</footer>
+var map;
+var infowindow;
+
+function initMap() {
+
+
+    var location = {};
+    location.lat = latStart;
+    location.lng = lngStart;
+
+    map = new google.maps.Map(document.getElementById('map'), {
+        center: location,
+        zoom: 10
+    });
+
+    infowindow = new google.maps.InfoWindow();
+    var service = new google.maps.places.PlacesService(map);
+    service.nearbySearch({
+        location: location,
+        radius: radius,
+        type: ['bar'],
+        keyword: keyword
+    }, callback);
+
+
+}
+
+function callback(results, status) {
+    if (status === google.maps.places.PlacesServiceStatus.OK) {
+        for (var i = 0; i < results.length; i++) {
+            createMarker(results[i]);
+        }
+
+        var name = results[randNum].name;
+        var address = results[randNum].vicinity;
+        var priceLevel = results[randNum].price_level;
+        var rating = results[randNum].rating;
+        var isOpen = results[randNum].opening_hours;
+        isOpen = isOpen.open_now;
+
+        if (isOpen === 'true') {
+            isOpen = 'Open';
+        } else {
+            isOpen = 'Closed';
+        }
+        console.log(results);
+        console.log(name);
+        console.log(address);
+        console.log(priceLevel);
+        console.log(rating);
+        console.log(isOpen);
+        $("#info").append("<p>" +name + "<br> Address: " + address + "<br> Price Level (out of 5): " + priceLevel + "<br> Rating: " + rating + "<br>" + isOpen + "</p>");
+
+    }
+}
+
+
+function createMarker(place) {
+    var placeLoc = place.geometry.location;
+    var marker = new google.maps.Marker({
+        map: map,
+        position: place.geometry.location
+    });
+
+    google.maps.event.addListener(marker, 'click', function() {
+        infowindow.setContent(place.name);
+        infowindow.open(map, this);
+    });
+}
+
+
+
+//Ride Pricing: passing in Latitude and Longitude
+$.ajax({
+
+    url: 'https://api.lyft.com/v1/cost?start_lat=' + latStartText + '&start_lng=' + lngStartText + '&end_lat=' + latEndText + '&end_lng=' + lngEndText,
+    type: 'GET',
+    beforeSend: function(xhr) {
+        xhr.setRequestHeader("Authorization", "Bearer otu4KK6PnP6kPSLijMWxFgjoHFIQk5aSTZ16ba98cuO23dCUy/8e1Dw37bEOEerpQJLZW3/tKbPw5iLGAWdwVOFGFUa6Nfd8xZ/HRSf0bTV8FNvAxYePDIE=");
+    },
+    success: function(response) {
+        console.log(response);
+    },
+    error: function(error) {
+        console.log(error);
+    }
+
+
+}).done(function(response) {
+
+    var lyftCostResults = response;
+    var lyftCost = lyftCostResults.cost_estimates[3].estimated_cost_cents_max;
+    var lyftRideType = lyftCostResults.cost_estimates[3].ride_type;
+
+    console.log(lyftCost + 'cents');
+    console.log(lyftRideType);
+
+    $("#lyft").append("<p id='lyftInfo'>" + "$" + lyftCost/100 + "<br>" + lyftRideType + "</p>");
+
+    $.ajax({
+    url: 'https://api.lyft.com/v1/eta?lat=' + latStartText + '&lng=' + lngStartText,
+    type: 'GET',
+    beforeSend: function(xhr) {
+        xhr.setRequestHeader("Authorization", "Bearer otu4KK6PnP6kPSLijMWxFgjoHFIQk5aSTZ16ba98cuO23dCUy/8e1Dw37bEOEerpQJLZW3/tKbPw5iLGAWdwVOFGFUa6Nfd8xZ/HRSf0bTV8FNvAxYePDIE=");
+    },
+    success: function(response) {
+        console.log(response);
+    },
+    error: function(error) {
+        console.log(error);
+    }
+}).done(function(response) {
+
+    var lyftResults = response;
+    var lyftTime = lyftResults.eta_estimates[1].eta_seconds;
+    var lyftRideType = lyftResults.eta_estimates[1].ride_type;
+
+    console.log(lyftTime);
+    console.log(lyftRideType);
+
+    $("#lyftInfo").append("<br> ETA: " +lyftTime/60);
+
+});
+});
+
+//Ride ETA: passing in Latitude and Longitude
+
+$.ajax({
+    url: 'https://api.uber.com/v1.2/estimates/price?start_latitude=' + latStartText + '&start_longitude=' + lngStartText + '&end_latitude=' + latEndText + '&end_longitude=' + lngEndText,
+    type: 'GET',
+    beforeSend: function(xhr) {
+        xhr.setRequestHeader("Authorization", "Token PFQZ7tdwz7A1HQCxtT4mGR041x_2wgpUtoIdF7gE");
+    },
+    success: function(response) {
+        console.log(response);
+    },
+    error: function(error) {
+        console.log(error);
+    }
+}).done(function(response) {
+
+    var uberResults = response;
+    var uberCost = uberResults.prices[7].high_estimate;
+    var uberRideType = uberResults.prices[7].display_name;
+
+    console.log(uberCost);
+    console.log(uberRideType);
+
+     $("#uber").append("<p id='uberInfo'>" + "$" + uberCost + "<br>" + uberRideType + "</p>");
+
+     $.ajax({
+    url: 'https://api.uber.com/v1.2/estimates/time?start_latitude=' + latStartText + '&start_longitude=' + lngStartText,
+    type: 'GET',
+    beforeSend: function(xhr) {
+        xhr.setRequestHeader("Authorization", "Token PFQZ7tdwz7A1HQCxtT4mGR041x_2wgpUtoIdF7gE");
+    },
+    success: function(response) {
+        console.log(response);
+    },
+    error: function(error) {
+        console.log(error);
+    }
+}).done(function(response) {
+
+    var uberResults = response;
+    var uberTime = uberResults.times[6].estimate;
+    var uberRideType = uberResults.times[6].display_name;
+
+    console.log(uberTime);
+    console.log(uberRideType);
+
+    $("#uberInfo").append("<br> ETA: " + uberTime/60);
+
+
+
+});
+
+});
+
+
+    
+    </script> 
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDcPKxGxES3dhenheALWRDi2YymPDjEhjk&libraries=places&callback=initMap">
+    </script>
 </body>
 </html>
