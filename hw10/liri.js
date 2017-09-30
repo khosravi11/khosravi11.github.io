@@ -31,8 +31,12 @@ function run (choice){
 		var params = {screen_name: 'raidersk11'};
 		client.get('statuses/user_timeline', params, function(error, tweets, response) {
 		  if (!error) {
-		    console.log(tweets);
+		  	var val = 1;
+		  	for(var i = 0; i < tweets.length; i++){
+		  	console.log('----------------------------------------\n'  );
+		    console.log( val + i + ": " + tweets[i].text);
 		  }
+		}
 		});
 	}
 
