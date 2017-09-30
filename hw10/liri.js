@@ -50,10 +50,10 @@ function run (choice){
 		    return console.log('Error occurred: ' + err);
 		  }
 		  results = data; 
-		console.log(JSON.stringify(results.tracks.items[0].artists[0].name, null, 2)); 
-		console.log(JSON.stringify(results.tracks.items[0].name, null, 2)); 
-		console.log(JSON.stringify(results.tracks.items[0].album.name, null, 2)); 
-		console.log(JSON.stringify(results.tracks.items[0].preview_url, null, 2)); 
+		console.log(results.tracks.items[0].artists[0].name); 
+		console.log(results.tracks.items[0].name); 
+		console.log(results.tracks.items[0].album.name); 
+		console.log(results.tracks.items[0].preview_url); 
 		});
 	}
 
@@ -64,24 +64,28 @@ function run (choice){
 		request("http://www.omdbapi.com/?t=" + movie + "&y=&plot=short&apikey=40e9cece", function(error, response, body) {
 		  if (!error && response.statusCode === 200) {
 
-		    console.log(JSON.parse(body).Title);
-		    console.log(JSON.parse(body).Year);	
-		    console.log(JSON.parse(body).imdbRating);
-		    if(JSON.parse(body).Ratings.length > 0){
-		    console.log('Rotten Tomato: ' + JSON.parse(body).Ratings[1].Value);
+		    var results = {};
+		    results = JSON.parse(body);
+
+		    console.log(results.Title);
+		    console.log(results.Year);	
+		    console.log(results.imdbRating);
+		    if(results.Ratings.length > 0){
+		    console.log('Rotten Tomato: ' + results.Ratings[1].Value);
 			}
 			else{
 				console.log('Rotten Tomato: N/A');
 			}
-		    console.log(JSON.parse(body).Country);
-		    console.log(JSON.parse(body).Language);
-		    console.log(JSON.parse(body).Plot);
-		    console.log(JSON.parse(body).Actors);
+		    console.log(results.Country);
+		    console.log(results.Language);
+		    console.log(results.Plot);
+		    console.log(results.Actors);
 		  }
 		});
 	}
 
 		if (choice === 'do-what-it-says'){
+			var count = 0; 
 			fs.readFile("random.txt", "utf8", function(error, data) {
 		  		if (error) {
 		    	return console.log(error);
