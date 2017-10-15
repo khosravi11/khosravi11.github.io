@@ -24,17 +24,11 @@ function run (){
       }
     ])
     .then(function(answer) {
-      connection.connect(function(err) {
-        if (err) {
-          console.error('error connecting: ' + err.stack);
-          return;
-        }
-        console.log('Connected as id ' + connection.threadId + '\n' +'-------------------------');
-      });
+
 
       connection.query("SELECT * FROM products WHERE ID = " + answer.id, function(err, result) {
           if (result[0].stock_quantity > answer.quantity){
-            console.log('Price : $',result[0].price);
+            console.log('Price : $',parseInt(result[0].price) * answer.quantity);
             var stock = result[0].stock_quantity;
             var quantityRequested = answer.quantity;
             var quantityRemaining = parseInt(stock) - quantityRequested;
