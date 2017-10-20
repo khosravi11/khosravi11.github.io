@@ -3,8 +3,8 @@ var mysql = require("mysql");
 
 var connection = mysql.createConnection({
   host: '127.0.0.1',
-  user: 'saam',
-  password: 'S@amk1992',
+  user: 'root',
+  password: '',
   database: 'bamazon'
 });
 
@@ -26,8 +26,7 @@ function run (){
     .then(function(answer) {
 
 
-      connection.query("SELECT * FROM products WHERE ID = " + answer.id, function(err, result) {
-          if (result[0].stock_quantity > answer.quantity){
+      connection.query("SELECT * FROM products WHERE ID = " + answer.id, function(err, result) {          if (result[0].stock_quantity > answer.quantity){
             console.log('Price : $',parseInt(result[0].price) * answer.quantity);
             var stock = result[0].stock_quantity;
             var quantityRequested = answer.quantity;
